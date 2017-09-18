@@ -1,5 +1,7 @@
 # Agenda
 
+Class project for Keepcoding Angular course Sep-2017.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
 ## Development server
@@ -12,7 +14,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## To use SCSS on existing project
 
-ng set defaults.styleExt scss
+`ng set defaults.styleExt scss`
 
 ## Build
 
