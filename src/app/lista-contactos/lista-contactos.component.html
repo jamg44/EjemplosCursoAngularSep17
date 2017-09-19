@@ -1,6 +1,8 @@
 <ul>
   <li *ngFor="let contacto of contactos"
       (click)="notificarContactoSeleccionado(contacto)">
-    <span>{{ contacto.nombre }}</span>
+    <span>
+      <strong>{{ contacto.nombre }}</strong> {{ contacto.apellidos }}
+    </span>
   </li>
 </ul>

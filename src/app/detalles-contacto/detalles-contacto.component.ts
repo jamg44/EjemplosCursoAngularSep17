@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Contacto } from '../entidades/contacto';
 
 @Component({
@@ -9,5 +9,15 @@ import { Contacto } from '../entidades/contacto';
 export class DetallesContactoComponent {
 
   @Input() contacto: Contacto;
+  @Output() verFacebook: EventEmitter<string> = new EventEmitter();
+  @Output() verTwitter: EventEmitter<string> = new EventEmitter();
+
+  notificarFacebook() {
+    this.verFacebook.emit(this.contacto.generarRutaFacebook());
+  }
+
+  notificarTwitter() {
+    this.verTwitter.emit(this.contacto.generarRutaTwitter());
+  }
 
 }

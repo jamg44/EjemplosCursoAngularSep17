@@ -1,0 +1,28 @@
+<form #contactoRef="ngForm" (ngSubmit)="guardar(contactoRef)">
+
+  <div>
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre"
+           name="nombre"
+           ngModel
+           #nombreRef="ngModel"
+           placeholder="Ej. John"
+           required>
+    <div *ngIf="nombreRef.touched && nombreRef.invalid">
+      Hay un error en campo nombre
+    </div>
+  </div>
+
+  <div>
+    <label for="apellidos">Apellidos</label>
+    <input type="text" id="apellidos"
+           name="apellidos"
+           ngModel
+           placeholder="Ej. Smith"
+           required>
+  </div>
+
+  <button type="submit"
+          [disabled]="contactoRef.invalid">Guardar</button>
+
+</form>

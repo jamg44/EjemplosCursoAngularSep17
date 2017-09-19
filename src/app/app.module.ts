@@ -12,8 +12,9 @@ import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto
 import { Servicio1,
   EjemplosInyeccionComponent,
   Servicio2Provider,
-  Servicio3Provider,
+  //Servicio3Provider,
   MiValorProvider} from "./ejemplos/ejemplos-inyeccion.component";
+import { FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
@@ -23,7 +24,8 @@ import { Servicio1,
     EjemplosComponentesComponent,
     ListaContactosComponent,
     DetallesContactoComponent,
-    EjemplosInyeccionComponent
+    EjemplosInyeccionComponent,
+    FormularioContactoComponent
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
@@ -33,7 +35,7 @@ import { Servicio1,
     ContactosService,
     Servicio1, // decorado con injectable
     Servicio2Provider, // sin decorador, creado con proveedor de clase
-    Servicio3Provider, // sin decorador, creado con proveedor de factoria
+    //Servicio3Provider, // sin decorador, creado con proveedor de factoria
     MiValorProvider // proveedor de valor
   ],
   bootstrap: [AppComponent]

@@ -1,9 +1,23 @@
 <div>
 
-  <h5>{{ contacto?.nombre }}</h5>
+  <div *ngIf="contacto">
 
-  <span>{{ contacto?.email}}</span>
+  <h5>{{ contacto.nombre }} {{ contacto.apellidos }}</h5>
 
-  <span>{{ contacto?.telefono}}</span>
+  <span>{{ contacto.email}}</span>
+
+  <span>{{ contacto.telefono}}</span>
+
+  <button type="button"
+          (click)="notificarFacebook()">
+    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+  </button>
+
+  <button type="button"
+          (click)="notificarTwitter()">
+    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+  </button>
+
+  </div>
 
 </div>
