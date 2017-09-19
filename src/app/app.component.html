@@ -2,5 +2,15 @@
 <!-- <ejemplos-binding></ejemplos-binding> -->
 <!-- <ejemplos-componentes></ejemplos-componentes> -->
 
-<lista-contactos [contactos]="contactos"></lista-contactos>
+<div class="container">
 
+  <header>
+    <h1>Mi Agenda</h1>
+  </header>
+
+  <lista-contactos [contactos]="listaContactos"
+                  (seleccionado)="mostrarDetalles($event)"></lista-contactos>
+
+  <detalles-contacto [contacto]="contactoSeleccionado"></detalles-contacto>
+
+</div>

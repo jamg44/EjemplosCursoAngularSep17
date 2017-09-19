@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Contacto } from "../entidades/contacto";
 
 @Component({
@@ -9,5 +9,9 @@ import { Contacto } from "../entidades/contacto";
 export class ListaContactosComponent {
 
   @Input() contactos: Contacto[];
+  @Output() seleccionado: EventEmitter<Contacto> = new EventEmitter();
 
+  notificarContactoSeleccionado(contacto: Contacto): void {
+    this.seleccionado.emit(contacto);
+  }
 }

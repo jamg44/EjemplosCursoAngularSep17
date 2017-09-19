@@ -7,6 +7,8 @@ import { CajaComponent } from './ejemplos/caja.component';
 import { EjemplosBindingComponent } from "./ejemplos/ejemplos-binding.component";
 import { EjemplosComponentesComponent } from "./ejemplos/ejemplos-componentes.component";
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
+import { ContactosService } from "./servicios/contactos.service";
+import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
@@ -14,14 +16,15 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
     CajaComponent,
     EjemplosBindingComponent,
     EjemplosComponentesComponent,
-    ListaContactosComponent
+    ListaContactosComponent,
+    DetallesContactoComponent
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
     FormsModule // para usar formularios
   ],
   providers: [ // apuntamos dependencias para inyectar
-
+    ContactosService
   ],
   bootstrap: [AppComponent]
 })
