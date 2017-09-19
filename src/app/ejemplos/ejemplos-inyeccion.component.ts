@@ -18,21 +18,18 @@ export const Servicio2Provider = {
   useClass: Servicio2
 };
 
-//proveedor de factoría
-/*export class Servicio3 {
+// proveedor de factoría
+export class Servicio3 {
   constructor(private mensaje: string) { }
   obtenerMensaje() {
     return this.mensaje;
   }
 }
-export const Servicio3Provider = {
-  provide: Servicio3,
-  useFactory: () => {
-    // construimos el resultado
-    return new Servicio3('Soy un servicio que usa un proveedor de factoria');
-    // return { obtenerMensaje: () => 'aaa' };
-  }
-};*/
+export function Servicio3Factory() {
+  // construimos el resultado
+  return new Servicio3('Soy un servicio que usa un proveedor de factoria');
+  // return { obtenerMensaje: () => 'aaa' };
+}
 
 // Ejemplo de proveedor de valor
 export const MiValor: OpaqueToken = new OpaqueToken('MiValor');
@@ -57,14 +54,14 @@ export class EjemplosInyeccionComponent implements OnInit {
   constructor(
     private servicio1: Servicio1,
     private servicio2: Servicio2,
-    //private servicio3: Servicio3,
+    private servicio3: Servicio3,
     @Inject(MiValor) private valor: string
   ) { }
 
   ngOnInit() {
     this.mensaje1 = this.servicio1.obtenerMensaje();
     this.mensaje2 = this.servicio2.obtenerMensaje();
-    //this.mensaje3 = this.servicio3.obtenerMensaje();
+    this.mensaje3 = this.servicio3.obtenerMensaje();
     this.mensaje4 = this.valor;
   }
 
