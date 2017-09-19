@@ -9,6 +9,11 @@ import { EjemplosComponentesComponent } from "./ejemplos/ejemplos-componentes.co
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import { ContactosService } from "./servicios/contactos.service";
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
+import { Servicio1,
+  EjemplosInyeccionComponent,
+  Servicio2Provider,
+  Servicio3Provider,
+  MiValorProvider} from "./ejemplos/ejemplos-inyeccion.component";
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
@@ -17,14 +22,19 @@ import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto
     EjemplosBindingComponent,
     EjemplosComponentesComponent,
     ListaContactosComponent,
-    DetallesContactoComponent
+    DetallesContactoComponent,
+    EjemplosInyeccionComponent
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
     FormsModule // para usar formularios
   ],
   providers: [ // apuntamos dependencias para inyectar
-    ContactosService
+    ContactosService,
+    Servicio1, // decorado con injectable
+    Servicio2Provider, // sin decorador, creado con proveedor de clase
+    Servicio3Provider, // sin decorador, creado con proveedor de factoria
+    MiValorProvider // proveedor de valor
   ],
   bootstrap: [AppComponent]
 })
