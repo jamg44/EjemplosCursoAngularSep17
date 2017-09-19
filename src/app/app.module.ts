@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CajaComponent } from './ejemplos/caja.component';
 import { EjemplosBindingComponent } from "./ejemplos/ejemplos-binding.component";
 import { EjemplosComponentesComponent } from "./ejemplos/ejemplos-componentes.component";
+import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
     AppComponent,
     CajaComponent,
     EjemplosBindingComponent,
-    EjemplosComponentesComponent
+    EjemplosComponentesComponent,
+    ListaContactosComponent
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
