@@ -3,12 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CajaComponent } from './caja.component';
+import { CajaComponent } from './ejemplos/caja.component';
+import { EjemplosBindingComponent } from "./ejemplos/ejemplos-binding.component";
+import { EjemplosComponentesComponent } from "./ejemplos/ejemplos-componentes.component";
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
     AppComponent,
-    CajaComponent
+    CajaComponent,
+    EjemplosBindingComponent,
+    EjemplosComponentesComponent
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,

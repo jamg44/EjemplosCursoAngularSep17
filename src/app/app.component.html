@@ -1,26 +1,3 @@
-<h1>Hola {{ nombre }}</h1>
 
-<!-- Ejemplo binding a propiedades -->
-<textarea [rows]="textAreaLineas"></textarea>
-
-<!-- Ejemplo binding a una clase -->
-<div [class.caja]="pintamosClase"></div>
-
-<!-- Ejemplo binding a varias clases -->
-<div [ngClass]="{rojo: claseRojo, flotante: claseFlotante, transparente: claseTransparente}"></div>
-
-<!-- Ejemplo binding a un estilo -->
-<p [style.color]="obtenerColor()">buenas tardes</p>
-
-<!-- Ejemplo binding a un evento -->
-<button (click)="botonPulsado($event)">pulsame</button>
-
-<!-- Ejemplo binding bidirecional (metemos FormsModule) -->
-<input type="text" [(ngModel)]="mensaje">
-{{ mensaje }}
-
-<!-- Ejemplos componentes -->
-<caja color="red" (encima)="eventoCaja($event)"></caja>
-<caja color="blue" (encima)="eventoCaja($event)"></caja>
-<caja color="pink" (encima)="eventoCaja($event)"></caja>
-<caja color="yellow" (encima)="eventoCaja($event)"></caja>
+<!-- <ejemplos-binding></ejemplos-binding> -->
+<!-- <ejemplos-componentes></ejemplos-componentes> -->
