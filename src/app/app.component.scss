@@ -1,2 +1,22 @@
+nav {
+  text-align: center;
+}
 
+ul {
+  list-style: none;
+  border-bottom: 1px solid #7a7a7a;
+}
 
+li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  border: 1px solid #7a7a7a;
+  padding: 14px 20px;
+}
+
+a.seleccionado {
+  border-bottom: 2px solid white;
+}

@@ -9,13 +9,16 @@
     <h1>Mi Agenda</h1>
   </header>
 
-  <formulario-contacto (formularioAceptado)="guardarContacto($event)"></formulario-contacto>
+  <!-- Barra de navegación -->
+  <nav>
+    <ul>
+      <li><a routerLink="/mis-contactos"
+             routerLinkActive="seleccionado">Mis contactos</a></li>
+      <li><a routerLink="/nuevo-contacto"
+             routerLinkActive="seleccionado">Nuevo contacto</a></li>
+    </ul>
+  </nav>
 
-  <lista-contactos [contactos]="listaContactos"
-                  (seleccionado)="mostrarDetalles($event)"></lista-contactos>
-
-  <detalles-contacto [contacto]="contactoSeleccionado"
-                     (verFacebook)="navegarRuta($event)"
-                     (verTwitter)="navegarRuta($event)"></detalles-contacto>
+  <router-outlet></router-outlet>
 
 </div>

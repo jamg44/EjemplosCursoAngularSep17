@@ -16,6 +16,9 @@ import { Servicio1,
   Servicio3Factory, Servicio3,
   MiValorProvider } from "./ejemplos/ejemplos-inyeccion.component";
 import { FormularioContactoComponent } from "./formulario-contacto/formulario-contacto.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { MisContactosComponent } from "./mis-contactos/mis-contactos.componenet";
+import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.component";
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
@@ -26,12 +29,15 @@ import { FormularioContactoComponent } from "./formulario-contacto/formulario-co
     ListaContactosComponent,
     DetallesContactoComponent,
     EjemplosInyeccionComponent,
-    FormularioContactoComponent
+    FormularioContactoComponent,
+    MisContactosComponent,
+    NuevoContactoComponent
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
     FormsModule, // para usar formularios
-    HttpModule
+    HttpModule, // para hacer peticiones HTTP
+    AppRoutingModule
   ],
   providers: [ // apuntamos dependencias para inyectar
     ContactosService,

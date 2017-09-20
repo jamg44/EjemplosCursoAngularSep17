@@ -1,0 +1,8 @@
+<h1>Mis contactos</h1>
+
+<lista-contactos [contactos]="listaContactos"
+(seleccionado)="mostrarDetalles($event)"></lista-contactos>
+
+<detalles-contacto [contacto]="contactoSeleccionado"
+   (verFacebook)="navegarRuta($event)"
+   (verTwitter)="navegarRuta($event)"></detalles-contacto>
