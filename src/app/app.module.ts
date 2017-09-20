@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CajaComponent } from './ejemplos/caja.component';
@@ -29,7 +30,8 @@ import { FormularioContactoComponent } from "./formulario-contacto/formulario-co
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
-    FormsModule // para usar formularios
+    FormsModule, // para usar formularios
+    HttpModule
   ],
   providers: [ // apuntamos dependencias para inyectar
     ContactosService,

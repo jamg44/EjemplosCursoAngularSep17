@@ -1,0 +1,31 @@
+{
+  "contactos": [
+    {
+      "nombre": "aSa",
+      "apellidos": "w2a",
+      "email": "",
+      "telefono": "",
+      "twitter": "",
+      "facebook": "",
+      "id": 2
+    },
+    {
+      "nombre": "asdsad",
+      "apellidos": "asdas",
+      "email": "",
+      "telefono": "",
+      "twitter": "",
+      "facebook": "",
+      "id": 3
+    },
+    {
+      "nombre": "asdas",
+      "apellidos": "asdas",
+      "email": "",
+      "telefono": "",
+      "twitter": "",
+      "facebook": "",
+      "id": 4
+    }
+  ]
+}

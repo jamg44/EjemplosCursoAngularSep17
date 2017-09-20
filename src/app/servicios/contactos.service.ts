@@ -1,42 +1,41 @@
 import { Injectable } from '@angular/core';
 import { Contacto } from "../entidades/contacto";
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ContactosService {
 
-  obtenerContactos(): Contacto[] {
-    return [
-      Contacto.desdeJSON(
-      {
-        id: 1,
-        nombre: 'Steve',
-        apellidos: 'Jobs',
-        email: 'steve.jobs@apple.com',
-        telefono: '76345863264823',
-        twitter: 'steve_jobs',
-        facebook: 'steve_jobs'
-      }),
-      Contacto.desdeJSON(
-        {
-        id: 2,
-        nombre: 'Bill',
-        apellidos: 'Gates',
-        email: 'bill.gates@microsoft.com',
-        telefono: '594689438957893',
-        twitter: 'billgates',
-        facebook: 'billgates'
-      }),
-      Contacto.desdeJSON(
-        {
-        id: 3,
-        nombre: 'Elon',
-        apellidos: 'Musk',
-        email: 'elon.musk@tesla.com',
-        telefono: '23242342424342',
-        twitter: 'elonmusk',
-        facebook: 'elonmusk'
-      })
-    ];
+  constructor(private http: Http) { }
+
+  obtenerContactos(): Observable<Array<Contacto>> {
+    return this.http
+      .get('http://localhost:3000/contactos')
+      // convierto el resultado a array y luego a Contactos
+      .map(res => { // este .map es el de los observables
+        return res.json()
+                // el .map de abajo es el de javascript
+                .map(contacto => Contacto.desdeJSON(contacto));
+      });
+  }
+
+  guardarContacto(contacto: Contacto): Observable<Contacto> {
+    return this.http
+      .post('http://localhost:3000/contactos', contacto)
+      .map(res => Contacto.desdeJSON(res.json()));
+      /*.subscribe(data => {
+        console.log('data', data);
+      });*/
+
+    // generamos un nuevo id
+    /*contacto.id = this.contactos.length + 1;
+
+    // añadimos el contacto a la lista
+    this.contactos.push(contacto);
+
+    // retornamos el contacto creado
+    return contacto;*/
   }
 
 }
