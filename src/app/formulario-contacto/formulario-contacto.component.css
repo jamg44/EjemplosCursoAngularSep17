@@ -10,3 +10,8 @@ input.ng-touched.ng-invalid {
 input.ng-touched.ng-valid {
   border: 1px solid green;
 }
+
+.mensaje-error {
+  color: red;
+  margin-bottom: 20px;
+}

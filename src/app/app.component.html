@@ -9,7 +9,7 @@
     <h1>Mi Agenda</h1>
   </header>
 
-  <formulario-contacto></formulario-contacto>
+  <formulario-contacto (formularioAceptado)="guardarContacto($event)"></formulario-contacto>
 
   <lista-contactos [contactos]="listaContactos"
                   (seleccionado)="mostrarDetalles($event)"></lista-contactos>

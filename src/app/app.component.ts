@@ -29,4 +29,8 @@ export class AppComponent implements OnInit {
   navegarRuta(ruta: string) {
     window.open(ruta, '_blank');
   }
+
+  guardarContacto(contacto: Contacto) {
+    console.log(contacto);
+  }
 }

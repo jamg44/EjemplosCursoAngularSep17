@@ -1,4 +1,6 @@
-<form #contactoRef="ngForm" (ngSubmit)="guardar(contactoRef)">
+<form #contactoRef="ngForm"
+      (ngSubmit)="notificarContacto(contactoRef)"
+      novalidate>
 
   <div>
     <label for="nombre">Nombre</label>
@@ -7,9 +9,16 @@
            ngModel
            #nombreRef="ngModel"
            placeholder="Ej. John"
-           required>
-    <div *ngIf="nombreRef.touched && nombreRef.invalid">
-      Hay un error en campo nombre
+           required
+           minlength="3">
+    <div *ngIf="nombreRef.touched && nombreRef.invalid"
+         class="mensaje-error">
+      <div *ngIf="nombreRef.errors.required">El nombre es requerido</div>
+      <div *ngIf="nombreRef.errors.minlength">
+        El nombre debe tener al
+        menos {{ nombreRef.errors.minlength.requiredLength }}
+        caracteres
+      </div>
     </div>
   </div>
 
@@ -18,11 +27,59 @@
     <input type="text" id="apellidos"
            name="apellidos"
            ngModel
+           #apellidosRef="ngModel"
            placeholder="Ej. Smith"
-           required>
-  </div>
+           required
+           minlength="3">
+        <div *ngIf="apellidosRef.touched && apellidosRef.invalid"
+           class="mensaje-error">
+        <div *ngIf="apellidosRef.errors.required">Apellidos requeridos</div>
+        <div *ngIf="apellidosRef.errors.minlength">
+          El campo apellidos debe tener al
+          menos {{ apellidosRef.errors.minlength.requiredLength }}
+          caracteres
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email"
+             id="email"
+             name="email"
+             ngModel
+             placeholder="Ej. asdas@dfdfd.es">
+    </div>
+
+    <div>
+        <label for="telefono">Telefono</label>
+        <input type="tel"
+               name="telefono"
+               id="telefono"
+               ngModel
+               placeholder="Ej. asdas@dfdfd.es">
+      </div>
+
+      <div>
+          <label for="twitter">Twitter</label>
+          <input type="text"
+                 name="twitter"
+                 id="twitter"
+                 ngModel
+                 placeholder="tim_cook">
+        </div>
+
+        <div>
+            <label for="facebook">Facebook</label>
+            <input type="text"
+                   name="facebook"
+                   id="facebook"
+                   ngModel
+                   placeholder="tim_cook">
+          </div>
 
   <button type="submit"
-          [disabled]="contactoRef.invalid">Guardar</button>
+          [disabled]="contactoRef.invalid"
+          class="button-primary">Guardar</button>
 
 </form>
