@@ -19,6 +19,8 @@ import { FormularioContactoComponent } from "./formulario-contacto/formulario-co
 import { AppRoutingModule } from "./app-routing.module";
 import { MisContactosComponent } from "./mis-contactos/mis-contactos.componenet";
 import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.component";
+import { ContactosResolve } from "./servicios/contactos-resolve.service";
+import { EjemplosObservablesComponent } from "./ejemplos/ejemplos-observables.component";
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
@@ -31,7 +33,8 @@ import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.componen
     EjemplosInyeccionComponent,
     FormularioContactoComponent,
     MisContactosComponent,
-    NuevoContactoComponent
+    NuevoContactoComponent,
+    EjemplosObservablesComponent
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
@@ -48,7 +51,8 @@ import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.componen
       provide: Servicio3,
       useFactory: Servicio3Factory
     },
-    MiValorProvider // proveedor de valor
+    MiValorProvider, // proveedor de valor
+    ContactosResolve // Resolve de lista de contactos
   ],
   bootstrap: [AppComponent]
 })

@@ -1,8 +1,16 @@
 <h1>Mis contactos</h1>
 
-<lista-contactos [contactos]="listaContactos"
-(seleccionado)="mostrarDetalles($event)"></lista-contactos>
+<div class="row">
 
-<detalles-contacto [contacto]="contactoSeleccionado"
-   (verFacebook)="navegarRuta($event)"
-   (verTwitter)="navegarRuta($event)"></detalles-contacto>
+  <div class="six columns">
+      <lista-contactos [contactos]="listaContactos"
+      (seleccionado)="mostrarDetalles($event)"></lista-contactos>
+    </div>
+
+    <div class="six columns">
+        <detalles-contacto [contacto]="contactoSeleccionado"
+        (verFacebook)="navegarRuta($event)"
+        (verTwitter)="navegarRuta($event)"></detalles-contacto>
+      </div>
+
+  </div>

@@ -1,12 +1,10 @@
 <div>
 
-  <div *ngIf="contacto">
+  <div *ngIf="contacto" class="u-full-width">
 
   <h5>{{ contacto.nombre }} {{ contacto.apellidos }}</h5>
 
-  <span>{{ contacto.email}}</span>
-
-  <span>{{ contacto.telefono}}</span>
+  <span>{{ contacto.email}} | {{ contacto.telefono}}</span>
 
   <button type="button"
           (click)="notificarFacebook()">
