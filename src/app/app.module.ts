@@ -25,6 +25,7 @@ import { EjemplosObservablesWikipedia } from "./ejemplos/ejemplos-observables-wi
 import { EjemplosPipeComponent } from "./ejemplos/ejemplos-pipe.component";
 import { EjemplosDirectivasComponent } from "./ejemplos/ejemplos-directiva.component";
 import { EjemploDirectivaAtributo } from "./ejemplos/ejemplo-directiva.directive";
+import { OrdenarPipe } from "./pipes/ordenar.pipe";
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
@@ -42,7 +43,8 @@ import { EjemploDirectivaAtributo } from "./ejemplos/ejemplo-directiva.directive
     EjemplosObservablesWikipedia,
     EjemplosPipeComponent,
     EjemplosDirectivasComponent,
-    EjemploDirectivaAtributo
+    EjemploDirectivaAtributo,
+    OrdenarPipe
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,

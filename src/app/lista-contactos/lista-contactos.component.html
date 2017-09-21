@@ -1,5 +1,15 @@
+<!-- Boton para ordenar la lista de contactos -->
+<button (click)="cambiarSentidoOrden()">
+    <i class="fa"
+       [ngClass]="{
+         'fa-sort-alpha-asc' : orden === 'desc',
+         'fa-sort-alpha-desc' : orden === 'asc'
+        }"
+    aria-hidden="true"></i>
+</button>
+
 <ul>
-  <li *ngFor="let contacto of contactos"
+  <li *ngFor="let contacto of (contactos | ordenar:orden)"
       (click)="notificarContactoSeleccionado(contacto)">
     <span>
       <strong>{{ contacto.nombre }}</strong> {{ contacto.apellidos }}
