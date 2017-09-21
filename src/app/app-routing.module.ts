@@ -18,6 +18,10 @@ const rutas: Routes = [
   {
     path: 'nuevo-contacto',
     component: NuevoContactoComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'mis-contactos'
   }
 ];
 
