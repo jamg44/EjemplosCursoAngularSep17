@@ -22,6 +22,9 @@ import { NuevoContactoComponent } from "./nuevo-contacto/nuevo-contacto.componen
 import { ContactosResolve } from "./servicios/contactos-resolve.service";
 import { EjemplosObservablesComponent } from "./ejemplos/ejemplos-observables.component";
 import { EjemplosObservablesWikipedia } from "./ejemplos/ejemplos-observables-wikipedia.component";
+import { EjemplosPipeComponent } from "./ejemplos/ejemplos-pipe.component";
+import { EjemplosDirectivasComponent } from "./ejemplos/ejemplos-directiva.component";
+import { EjemploDirectivaAtributo } from "./ejemplos/ejemplo-directiva.directive";
 
 @NgModule({
   declarations: [ // apuntamos todos los componentes, pipas y directivas
@@ -36,7 +39,10 @@ import { EjemplosObservablesWikipedia } from "./ejemplos/ejemplos-observables-wi
     MisContactosComponent,
     NuevoContactoComponent,
     EjemplosObservablesComponent,
-    EjemplosObservablesWikipedia
+    EjemplosObservablesWikipedia,
+    EjemplosPipeComponent,
+    EjemplosDirectivasComponent,
+    EjemploDirectivaAtributo
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,
