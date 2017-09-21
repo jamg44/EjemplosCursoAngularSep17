@@ -1,0 +1,10 @@
+<label for="wikipedia">Buscar en Wikipedia</label>
+<input type="text"
+       id="wikipedia"
+       (input)="buscarEnWikipedia($event)">
+
+<ul>
+  <li *ngFor="let resultado of resultados">
+    {{ resultado }}
+  </li>
+</ul>

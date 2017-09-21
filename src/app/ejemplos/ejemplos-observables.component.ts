@@ -17,7 +17,7 @@ export class EjemplosObservablesComponent {
       // emitimos un error
       //observador.error('ERROR FATAL');
 
-      // tras un erro ya no puedo emitir mas
+      // tras un error ya no puedo emitir mas
       //observador.next('tras error');
 
       observador.complete();
@@ -34,6 +34,8 @@ export class EjemplosObservablesComponent {
       () => {
         console.log('completado!');
       }
-    )
+    );
   }
+
+
 }
