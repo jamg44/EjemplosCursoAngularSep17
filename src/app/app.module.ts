@@ -24,7 +24,7 @@ import { EjemplosObservablesComponent } from "./ejemplos/ejemplos-observables.co
 import { EjemplosObservablesWikipedia } from "./ejemplos/ejemplos-observables-wikipedia.component";
 import { EjemplosPipeComponent } from "./ejemplos/ejemplos-pipe.component";
 import { EjemplosDirectivasComponent } from "./ejemplos/ejemplos-directiva.component";
-import { EjemploDirectivaAtributo } from "./ejemplos/ejemplo-directiva.directive";
+import { EjemploDirectivaAtributo, EjemploDirectivaEstructuralDirective } from "./ejemplos/ejemplo-directiva.directive";
 import { OrdenarPipe } from "./pipes/ordenar.pipe";
 
 @NgModule({
@@ -44,7 +44,8 @@ import { OrdenarPipe } from "./pipes/ordenar.pipe";
     EjemplosPipeComponent,
     EjemplosDirectivasComponent,
     EjemploDirectivaAtributo,
-    OrdenarPipe
+    OrdenarPipe,
+    EjemploDirectivaEstructuralDirective
   ],
   imports: [ // apuntamos modulos externos que uso
     BrowserModule,

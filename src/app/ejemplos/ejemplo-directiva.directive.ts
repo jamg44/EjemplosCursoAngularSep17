@@ -1,4 +1,8 @@
-import { Directive, ElementRef, Renderer, HostListener, Output, EventEmitter } from "@angular/core";
+import {
+  Directive, ElementRef, Renderer, HostListener,
+  Output, EventEmitter,
+  TemplateRef, ViewContainerRef, Input
+} from "@angular/core";
 
 @Directive({ selector: '[EjemploDirectivaAtributo]' })
 export class EjemploDirectivaAtributo {
@@ -34,3 +38,25 @@ export class EjemploDirectivaAtributo {
     );
   }
 }
+
+// Ejemplo de directiva Estructural
+@Directive({ selector: '[EjemploDirectivaEstructural]' })
+export class EjemploDirectivaEstructuralDirective {
+
+  // ViewContainerRef es una ref al marco del DOM
+  // TemplateRef es una ref al template contenido en el elemento
+  constructor(
+    private _templateRef: TemplateRef<any>,
+    private _viewContainerRef: ViewContainerRef) { }
+
+  // Recogemos el valor que se le pase a la directiva
+  // y activamos el temporizador
+  @Input('EjemploDirectivaEstructural')
+  set tiempoEspera(milisegundos: number) {
+    setTimeout(() => {
+      this._viewContainerRef.createEmbeddedView(this._templateRef);
+    }, milisegundos);
+  }
+
+}
+
